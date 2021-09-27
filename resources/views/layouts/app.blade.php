@@ -29,7 +29,24 @@
         
         <section class="px-8">
         <main class="container mx-auto">
+        <div class="lg:flex lg:justify-center">
+         <!--Sidebar section-->
+        <div class="lg:w-32">
+            @include ('_sidebar-links')
+        </div>
+
+
+        <!--Publish section-->
+        <div class="lg:flex-1 lg:mx-10" style="max-width: 700px">
             @yield('content')
+        </div>
+
+
+        <!--Friends section-->
+        <div class="lg:w-1/6">
+            @include ('_friends-list')
+        </div>
+    </div>
         </main>
         </section>
         
