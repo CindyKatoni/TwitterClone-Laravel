@@ -10,14 +10,20 @@
         </div>
 
         <div class="flex">
-            <a href="" class="rounded-full border border-gray-300 py-2 px-4 text-black text-sm">Edit Profile</a>
-            
+            @if (current_user()->is($user))
+
+            <a href="{{ $user->path('edit') }}" class="rounded-full border border-gray-300 py-2 px-4 text-black text-sm">Edit Profile</a>
+            @endif
+
+            <!--Follow Button -->
+            @if (current_user()->isNot($user))
             <form method="POST" action="/profiles/{{ $user->name }}/follow">
             @csrf
                 <button type="submit" class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-sm">
-                    {{ auth()->user()->following($user) ? 'Unfollow Me' : 'Follow Me'}}
+                    {{ current_user()->following($user) ? 'Unfollow Me' : 'Follow Me'}}
                 </button>
             </form>
+            @endif
            
         </div>
         </div>
