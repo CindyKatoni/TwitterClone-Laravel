@@ -6,12 +6,17 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
+
 class ProfileController extends Controller
 {
     public function show(User $user)
     {
         // return $user;
-        return view('profiles.show', compact('user'));
+        // return view('profiles.show', compact('user'));
+        return view('profiles.show', [
+            'user' => $user,
+            'tweets' => $user->tweets()->paginate(5),
+        ]);
     }
 
     public function edit(User $user)
