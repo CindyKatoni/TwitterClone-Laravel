@@ -43,6 +43,11 @@ class User extends Authenticatable
           return "https://i.pravatar.cc/200?u=" . $this->email;
       }  
 
+      public function setPasswordAttribute($value)
+      {
+        $this->attributes['password'] = bcrypt($value);
+      }
+
       public function timeline()
       {
          //include all of the users tweets, 
