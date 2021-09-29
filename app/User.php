@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Tweet;
+use App\Like;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -56,6 +57,7 @@ class User extends Authenticatable
          
          return Tweet::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
+            ->withLikes()
             ->latest()->paginate(10);
 
       }  
@@ -70,6 +72,11 @@ class User extends Authenticatable
       public function getRouteKeyName()
       {
           return 'name';
+      }
+
+      public function likes()
+      {
+          return $this->hasMany(Like::class);
       }
 
       //generate path to the users profile
