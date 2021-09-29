@@ -16,7 +16,6 @@ trait Likeable
         );
     }
 
-
     public function isLikedBy(User $user)
     {
         return (bool) $user->likes

@@ -2,8 +2,8 @@
 
 namespace App;
 
-use App\User;
-use App\Like;
+
+
 use Illuminate\Database\Eloquent\Model;
 
 class Tweet extends Model
