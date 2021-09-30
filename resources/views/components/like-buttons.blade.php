@@ -10,24 +10,12 @@
                                     </g>
                                 </g>
                             </svg>
+                            
                             <button type="submit" class="text-xs"> {{ $tweet->likes ?: 0 }} </button>
+                            
+                           
                         </div>
                         </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -49,4 +37,10 @@
                             
                         </div>
                         </form>
+                                  
+                        <!--Form to display list of people who liked/disliked tweet-->
+                       
+                        
+
                         </div>
+                        

@@ -29,10 +29,9 @@
         </div>
         </div>
 
-        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-             aliquip ex ea commodo consequat.
-        </p>
+        <!--User can edit description-->
+        <p class="text-sm">{{ $user->description }}</p>
+
         <!-- Users avatar -->
         <img src="{{ $user->avatar}}" alt="" class="rounded-full mr-2 absolute style" style="width: 150px; left:calc(50% - 75px); top:55%; "> 
         

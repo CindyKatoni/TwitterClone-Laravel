@@ -25,4 +25,13 @@ class TweetController extends Controller
 
         return redirect('/tweets');
     }
+
+    // public function viewLikes(Request $request)
+    // {
+        
+    //     $tweet = $request->id;
+    //     // $tweet = Tweet::all();
+    //     dd($tweet);
+    //     return view('tweets.show');
+    // }
 }

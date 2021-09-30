@@ -10,7 +10,7 @@
                         <h5 class="font-bold mb-4">
                             <a href="{{ $tweet->user->path() }}">{{ $tweet->user->name }}</a>
                         </h5>
-                        <p class="text-sm mb-3">{{ $tweet->body }}</p>
+                        <p class="text-sm mb-3">{{ $tweet->body }} Liked By </p>
 
                         <!--LIKE DISLIKE FORM-->
                         <x-like-buttons :tweet="$tweet" />
